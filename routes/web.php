@@ -23,4 +23,7 @@ Route::get('/ping/{ip}', function ($ip)
 /**
  * Exclude IP's for Google Analytics
  */
-//$app->get('/google/analytics/exclude_ip', '\Api\Plugin\Google\Analytics\ExcludeIP');
+Route::get('/google/analytics/exclude-ip', function ()
+{
+	new Api\Plugin\Google\Analytics\ExcludeIP();
+});
