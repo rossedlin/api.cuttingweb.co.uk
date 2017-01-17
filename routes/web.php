@@ -1,14 +1,26 @@
 <?php
-/**
- * This file is where you may define all of the routes that are handled
- * by your application. Just tell Laravel the URIs it should respond
- * to using a Closure or controller method. Build something great!
- */
+
+use \App\Api;
 
 /**
  * Main Route
  */
-Route::get('/', function ()
+Route::get('/', function (Request $request)
 {
 	return view('api');
 });
+
+/**
+ * Ping Test
+ */
+Route::get('/ping/{ip}', function ($ip)
+{
+	new Api\Plugin\Ping([
+		'ip' => $ip,
+	]);
+});
+
+/**
+ * Exclude IP's for Google Analytics
+ */
+//$app->get('/google/analytics/exclude_ip', '\Api\Plugin\Google\Analytics\ExcludeIP');
