@@ -17,7 +17,7 @@ class Ping extends _Plugin
 	/**
 	 * @param array $args
 	 */
-	public function __construct(array $args)
+	public function __construct(array $args = [])
 	{
 		if (preg_match('/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\z/', $args['ip']))
 		{

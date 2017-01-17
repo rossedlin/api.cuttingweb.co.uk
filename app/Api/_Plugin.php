@@ -45,5 +45,5 @@ abstract class _Plugin
 	/**
 	 * @param array $args
 	 */
-	abstract public function __construct(array $args);
+	abstract public function __construct(array $args = []);
 }
