@@ -1,0 +1,58 @@
+SHA1 Fingerprint=79:E4:3E:C7:BD:2B:6D:87:B8:21:AE:8A:2E:31:7F:99:CD:CB:99:A4
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 14386389083633067678 (0xc7a6b8a63281a69e)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=GB, L=Default City, O=Default Company Ltd, CN=*.lineten.vm
+        Validity
+            Not Before: Feb 19 15:45:17 2016 GMT
+            Not After : Feb 16 15:45:17 2026 GMT
+        Subject: C=GB, L=Default City, O=Default Company Ltd, CN=*.lineten.vm
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:c6:3a:c0:f7:55:fa:78:78:54:76:68:90:47:6c:
+                    e2:c1:c0:8b:a9:98:05:1f:1c:7a:49:fb:e8:e8:2d:
+                    7e:4e:29:bf:a6:1c:ca:5a:5b:c3:d7:08:fb:74:cf:
+                    c9:1e:3c:f6:59:6a:21:fe:38:d7:d3:87:73:6d:ec:
+                    97:b7:4a:72:26:c0:db:cb:0f:ad:7a:12:6f:8c:8d:
+                    40:ad:f0:bd:df:0d:3a:f7:f0:13:68:85:1d:31:d6:
+                    40:df:e9:52:be:33:ab:cc:7c:b2:49:5b:3b:0e:80:
+                    90:7a:4c:21:d7:4c:54:fe:cb:de:90:6b:c5:5e:b5:
+                    ea:18:f7:f7:a0:94:7d:a8:11:dd:af:ca:da:b5:b0:
+                    5d:4d:00:85:75:48:84:d3:e6:0e:f2:bd:d8:ee:80:
+                    e8:ad:a3:7b:95:a6:c5:8e:aa:8d:a6:ed:48:47:23:
+                    5d:08:88:67:3e:0e:76:32:94:d5:fa:02:7e:c5:e2:
+                    22:8a:14:d4:ce:c4:00:97:d1:a0:51:e7:ac:fc:ef:
+                    2f:1d:26:27:f6:2d:38:b4:6b:5f:23:5b:ef:19:1a:
+                    2e:59:3c:66:e9:e2:1b:2e:00:57:7f:d5:c4:d4:a1:
+                    77:92:b1:08:5b:22:76:32:17:7c:1d:20:39:c2:2d:
+                    e1:c5:d1:7b:79:d9:b4:b4:b0:08:d3:63:07:4f:0c:
+                    5e:cb
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                A1:5E:BC:45:0C:82:EE:4B:0E:63:97:85:77:68:9C:73:4F:74:E1:F9
+            X509v3 Authority Key Identifier: 
+                keyid:A1:5E:BC:45:0C:82:EE:4B:0E:63:97:85:77:68:9C:73:4F:74:E1:F9
+
+            X509v3 Basic Constraints: 
+                CA:TRUE
+    Signature Algorithm: sha1WithRSAEncryption
+         70:d3:fc:a7:a0:12:0e:2d:91:2e:c8:9b:18:2e:fe:1e:4e:45:
+         ba:9c:76:67:c6:fa:ec:07:69:97:c5:27:19:94:a5:4b:b7:e5:
+         11:b5:14:5d:ad:7c:85:36:e1:6f:04:97:3e:0d:af:44:52:d8:
+         00:79:f1:38:eb:f7:e7:9a:5b:93:30:88:78:a5:c3:97:1f:39:
+         1c:59:8d:a1:a7:59:b5:7a:e7:8e:c7:be:bb:31:d8:44:3c:1a:
+         cf:19:da:bf:58:f0:cd:27:b6:68:f6:02:6a:c7:29:a4:51:11:
+         6c:72:60:c9:15:f9:87:40:e2:c8:6c:5f:bf:7e:74:69:55:d6:
+         02:2f:44:ab:73:11:c6:d1:01:b8:28:49:f7:15:3c:c6:95:16:
+         06:20:bf:c1:05:a6:21:30:22:21:1a:3a:0a:bf:d2:09:a0:f3:
+         54:a3:5b:e8:f7:9c:a7:48:33:a9:42:e7:38:7e:11:d3:8b:c2:
+         8c:23:90:97:d6:0b:ed:20:9e:d7:f8:2c:95:e6:fe:70:2c:dd:
+         07:1f:bf:39:4a:49:8d:ab:00:7e:e4:2f:da:ad:1a:7f:09:0d:
+         14:e5:f8:49:ac:c0:38:80:68:7b:85:61:b3:c1:d7:0c:1b:54:
+         0b:91:7d:63:29:6f:f3:9e:e2:31:ee:96:a2:f3:d2:46:ae:b8:
+         2e:04:77:d4
