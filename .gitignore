@@ -3,7 +3,7 @@
 
 /public/google*.html
 /vendor
-.env
+/.env
 _ide_helper.php
 /node_modules
 /public/storage
