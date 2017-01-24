@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-rm /var/www/html/database/cryslo_api.sqlite
-echo > /var/www/html/database/cryslo_api.sqlite
+if [ ! -f /var/www/html/database/cryslo_api.sqlite ]; then
+    echo "" > /var/www/html/database/cryslo_api.sqlite
+fi
+
 php artisan migrate
