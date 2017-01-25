@@ -20,6 +20,13 @@ Route::get('/ping/{ip}', function ($ip)
 	]);
 });
 
+Route::get('/check-pulse/{code}', function ($code)
+{
+	new Api\Plugin\CheckPulse([
+		'code' => $code,
+	]);
+});
+
 /**
  * Exclude IP's for Google Analytics
  */
