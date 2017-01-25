@@ -26,7 +26,22 @@ cd /var/www/html
 rm .env
 cp vagrant/.env .env
 
+echo "Generate SQLight Database" >> /install.log
+cd /var/www/html
+vagrant/sqlite.sh
+
+echo "Composer Update" >> /install.log
+cd /var/www/html
+composer update
+
 echo "Generate IDE Helper" >> /install.log
 cd /var/www/html
 rm _ide_helper.php
 php artisan ide-helper:generate
+
+echo "Generate PhpStorm META" >> /install.log
+cd /var/www/html
+rm .phpstorm.meta.php
+php artisan ide-helper:meta
+
+#php artisan ide-helper:models

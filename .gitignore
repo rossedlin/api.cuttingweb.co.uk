@@ -5,6 +5,7 @@
 /vendor
 /.env
 _ide_helper.php
+.phpstorm.meta.php
 /node_modules
 /public/storage
 Homestead.json
