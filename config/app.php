@@ -137,6 +137,7 @@ return [
 
     'providers' => [
 
+//		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 //		Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
 
         /*
@@ -164,8 +165,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class, //had to add manually
 
         /*
          * Package Service Providers...
