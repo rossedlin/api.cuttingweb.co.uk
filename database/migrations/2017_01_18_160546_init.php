@@ -16,31 +16,40 @@ class Init extends Migration
 		/**
 		 * Add the Email Blocklist Table
 		 */
-		Schema::create('cry_email_blocklist', function (Blueprint $table)
+		if (!Schema::hasTable('cry_email_blocklist'))
 		{
-			$table->increments('email_blocklist_id');
-			$table->string('email', 255)->unique();
-		});
+			Schema::create('cry_email_blocklist', function (Blueprint $table)
+			{
+				$table->increments('email_blocklist_id');
+				$table->string('email', 255)->unique();
+			});
+		}
 
 		/**
 		 * Add the Heartbeat Table
 		 * This is a record table of each pulse
 		 */
-		Schema::create('cry_heartbeat', function (Blueprint $table)
+		if (!Schema::hasTable('cry_heartbeat'))
 		{
-			$table->increments('heartbeat_id');
-			$table->string('code', 50);
-			$table->timestamp('datetime_added');
-		});
+			Schema::create('cry_heartbeat', function (Blueprint $table)
+			{
+				$table->increments('heartbeat_id');
+				$table->string('code', 50);
+				$table->timestamp('datetime_added');
+			});
+		}
 
 		/**
 		 * Add the Heartbeat Code Table
 		 */
-		Schema::create('cry_heartbeat_code', function (Blueprint $table)
+		if (!Schema::hasTable('cry_heartbeat_code'))
 		{
-			$table->increments('heartbeat_code_id');
-			$table->string('code', 50);
-		});
+			Schema::create('cry_heartbeat_code', function (Blueprint $table)
+			{
+				$table->increments('heartbeat_code_id');
+				$table->string('code', 50);
+			});
+		}
     }
 
     /**
