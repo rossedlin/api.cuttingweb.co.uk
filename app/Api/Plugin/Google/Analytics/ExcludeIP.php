@@ -2,6 +2,8 @@
 namespace App\Api\Plugin\Google\Analytics;
 
 use \App\Api\_Plugin;
+use \Cryslo\Core\Utils;
+use \App\Models;
 
 /**
  * Created by PhpStorm.
@@ -21,19 +23,37 @@ class ExcludeIP extends _Plugin
 	 */
 	public function __construct(array $args = [])
 	{
-//		$redis = new \Predis\Client();
-//		$redis->expire(self::REDIS_KEY, 3600);
+		$redis = new \Predis\Client();
+		$redis->expire(self::REDIS_KEY, 3600);
 
-		$payload = false;
-//		$payload = unserialize($redis->get(self::REDIS_KEY));
+//		$payload = false;
+		$payload = unserialize($redis->get(self::REDIS_KEY));
+
 		if (!is_array($payload))
 		{
-			$payload = [
-				gethostbyname('cryslo.no-ip.biz'), //swc.cryslo.com
-				'46.101.41.172', //cloud.cryslo.com
-			];
+			$payload = [];
 
-//			$redis->set(self::REDIS_KEY, serialize($payload));
+			/** @var Models\Heartbeat $heartbeat */
+			$ips = Models\GoogleAnalyticsIp::all();
+
+			foreach ($ips as $ip)
+			{
+				$address = Utils::getVarObject($ip, 'address', false);
+				$type    = (int)Utils::getVarObject($ip, 'type', false);
+
+				switch ($type)
+				{
+					case Models\GoogleAnalyticsIp::TYPE_DOMAIN:
+						$payload[] = gethostbyname($address);
+						break;
+
+					case Models\GoogleAnalyticsIp::TYPE_IP:
+						$payload[] = $address;
+						break;
+				}
+			}
+
+			$redis->set(self::REDIS_KEY, serialize($payload));
 		}
 
 		$this->render($payload);
