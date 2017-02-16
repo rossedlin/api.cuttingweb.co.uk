@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use \App\Api;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::post('/email', function (Request $request)
+{
+	new Api\Plugin\Email($request);
+});
+
+//Route::get('/user', function (Request $request) {
+//    return $request->user();
+//})->middleware('auth:api');
