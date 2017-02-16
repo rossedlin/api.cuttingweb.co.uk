@@ -26,7 +26,7 @@
 
     "laravel/framework": "5.3.*",
 
-    "cryslo/cryslo_core": "1.7.*",
+    "cryslo/cryslo_core": "1.8.*",
     "predis/predis": "1.1.*"
   },
   "require-dev": {
