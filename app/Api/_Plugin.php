@@ -1,6 +1,7 @@
 <?php
 namespace App\Api;
 
+use Illuminate\Http\Request;
 use \App\Api\Object\Output;
 
 /**
@@ -43,7 +44,8 @@ abstract class _Plugin
 	}
 
 	/**
+	 * @param Request $request
 	 * @param array $args
 	 */
-	abstract public function __construct(array $args = []);
+	abstract public function __construct(Request $request, array $args = []);
 }
