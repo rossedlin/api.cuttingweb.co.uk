@@ -1,6 +1,7 @@
 <?php
 namespace App\Api\Plugin\Google\Analytics;
 
+use Illuminate\Http\Request;
 use \App\Api\_Plugin;
 use \Cryslo\Core\Utils;
 use \App\Models;
@@ -19,9 +20,12 @@ class ExcludeIP extends _Plugin
 	const REDIS_KEY = 'exclude_ip';
 
 	/**
-	 * @param array $args
+	 * ExcludeIP constructor.
+	 *
+	 * @param Request $request
+	 * @param array   $args
 	 */
-	public function __construct(array $args = [])
+	public function __construct(Request $request, array $args = [])
 	{
 		$redis = new \Predis\Client();
 		$redis->expire(self::REDIS_KEY, 3600);
