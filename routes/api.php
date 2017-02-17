@@ -14,11 +14,44 @@ use \App\Api;
 |
 */
 
+Route::get('/check-pulse/{code}', function ($code)
+{
+	new Api\Plugin\CheckPulse([
+		'code' => $code,
+	]);
+});
+
 Route::post('/email', function (Request $request)
 {
 	new Api\Plugin\Email($request);
 });
 
+/**
+ * Exclude IP's for Google Analytics
+ */
+Route::get('/google/analytics/exclude-ip', function ()
+{
+	new Api\Plugin\Google\Analytics\ExcludeIP();
+});
+
+/**
+ * Ping Test
+ */
+Route::get('/my-ip', function (Request $request)
+{
+	new Api\Plugin\MyIp($request);
+});
+
+/**
+ * Ping Test
+ */
+Route::get('/ping/{ip}', function (Request $request, $ip)
+{
+	new Api\Plugin\Ping($request, [
+		'ip' => $ip,
+	]);
+});
+
 //Route::get('/user', function (Request $request) {
 //    return $request->user();
-//})->middleware('auth:api');
+//})->middleware('auth:api'); 
