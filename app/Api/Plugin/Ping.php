@@ -1,6 +1,7 @@
 <?php
 namespace App\Api\Plugin;
 
+use Illuminate\Http\Request;
 use \App\Api\_Plugin;
 
 /**
@@ -15,9 +16,12 @@ use \App\Api\_Plugin;
 class Ping extends _Plugin
 {
 	/**
+	 * Ping constructor.
+	 *
+	 * @param Request $request
 	 * @param array $args
 	 */
-	public function __construct(array $args = [])
+	public function __construct(Request $request, array $args = [])
 	{
 		if (preg_match('/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\z/', $args['ip']))
 		{
