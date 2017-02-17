@@ -14,9 +14,9 @@ use \App\Api;
 |
 */
 
-Route::get('/check-pulse/{code}', function ($code)
+Route::get('/check-pulse/{code}', function (Request $request, $code)
 {
-	new Api\Plugin\CheckPulse([
+	new Api\Plugin\CheckPulse($request, [
 		'code' => $code,
 	]);
 });
@@ -29,9 +29,9 @@ Route::post('/email', function (Request $request)
 /**
  * Exclude IP's for Google Analytics
  */
-Route::get('/google/analytics/exclude-ip', function ()
+Route::get('/google/analytics/exclude-ip', function (Request $request)
 {
-	new Api\Plugin\Google\Analytics\ExcludeIP();
+	new Api\Plugin\Google\Analytics\ExcludeIP($request);
 });
 
 /**

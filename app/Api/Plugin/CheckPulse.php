@@ -1,6 +1,7 @@
 <?php
 namespace App\Api\Plugin;
 
+use Illuminate\Http\Request;
 use \App\Api\_Plugin;
 use \Cryslo\Core\Utils;
 use \App\Models;
@@ -17,9 +18,12 @@ use \App\Models;
 class CheckPulse extends _Plugin
 {
 	/**
-	 * @param array $args
+	 * CheckPulse constructor.
+	 *
+	 * @param Request $request
+	 * @param array   $args
 	 */
-	public function __construct(array $args = [])
+	public function __construct(Request $request, array $args = [])
 	{
 		$code          = Utils::getFromArray($args, 'code');
 		$heartbeatCode = Models\HeartbeatCode::where('code', $code)->first();
