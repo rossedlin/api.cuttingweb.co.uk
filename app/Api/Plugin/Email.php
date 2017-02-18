@@ -38,10 +38,10 @@ class Email extends _Plugin
 		}
 
 		/**
-		 * Validate Token
+		 * Validate Secret
 		 */
-		$token = $request->get('token');
-		if ($token !== 'th34t34gh340gh3784gh348gh3')
+		$secret = $request->get('secret');
+		if ($secret !== 'th34t34gh340gh3784gh348gh3')
 		{
 			abort(404);
 		}
