@@ -27,11 +27,11 @@ class ExcludeIP extends _Plugin
 	 */
 	public function __construct(Request $request, array $args = [])
 	{
-		$redis = new \Predis\Client();
-		$redis->expire(self::REDIS_KEY, 3600);
+//		$redis = new \Predis\Client();
+//		$redis->expire(self::REDIS_KEY, 3600);
 
-//		$payload = false;
-		$payload = unserialize($redis->get(self::REDIS_KEY));
+		$payload = false;
+//		$payload = unserialize($redis->get(self::REDIS_KEY));
 
 		if (!is_array($payload))
 		{
@@ -57,7 +57,7 @@ class ExcludeIP extends _Plugin
 				}
 			}
 
-			$redis->set(self::REDIS_KEY, serialize($payload));
+//			$redis->set(self::REDIS_KEY, serialize($payload));
 		}
 
 		$this->render($payload);
