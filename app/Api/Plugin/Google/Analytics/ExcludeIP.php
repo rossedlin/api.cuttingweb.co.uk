@@ -44,11 +44,11 @@ class ExcludeIP extends _Plugin
 	 */
 	private function get(Request $request)
 	{
-//		$redis = new \Predis\Client();
-//		$redis->expire(self::REDIS_KEY, 3600);
+		$redis = new \Predis\Client();
+		$redis->expire(self::REDIS_KEY, 3600);
 
-		$payload = false;
-//		$payload = unserialize($redis->get(self::REDIS_KEY));
+//		$payload = false;
+		$payload = unserialize($redis->get(self::REDIS_KEY));
 
 		if (!is_array($payload))
 		{
@@ -74,7 +74,7 @@ class ExcludeIP extends _Plugin
 				}
 			}
 
-//			$redis->set(self::REDIS_KEY, serialize($payload));
+			$redis->set(self::REDIS_KEY, serialize($payload));
 		}
 
 		$this->render($payload);
@@ -149,6 +149,15 @@ class ExcludeIP extends _Plugin
 		 */
 		$success = $googleAnalyticsIp->save();
 
+		/**
+		 * Purge Redis
+		 */
+		if ($success)
+		{
+			$redis = new \Predis\Client();
+			$redis->del(self::REDIS_KEY);
+		}
+
 		$this->render([
 			'success' => $success,
 			'ip'      => $ip,
@@ -177,6 +186,15 @@ class ExcludeIP extends _Plugin
 		 * Insert/Update Record
 		 */
 		$success = $googleAnalyticsIp->save();
+
+		/**
+		 * Purge Redis
+		 */
+		if ($success)
+		{
+			$redis = new \Predis\Client();
+			$redis->del(self::REDIS_KEY);
+		}
 
 		$this->render([
 			'success' => $success,
