@@ -33,6 +33,10 @@ Route::get('/google/analytics/exclude-ip', function (Request $request)
 {
 	new Api\Plugin\Google\Analytics\ExcludeIP($request);
 });
+Route::post('/google/analytics/exclude-ip', function (Request $request)
+{
+	new Api\Plugin\Google\Analytics\ExcludeIP($request);
+});
 
 /**
  * Ping Test
