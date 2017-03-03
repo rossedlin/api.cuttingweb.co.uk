@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class GoogleAnalyticsIp
  * @package App\Models
  *
- * @property integer $google_analytics_ip_id
+ * @property integer $id
  * @property string  $address
  * @property integer $type
  */
