@@ -12,6 +12,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class Analytics extends Migration
 {
+	const DATE_TIME = '1970-01-01 00:00:00';
+	
 	/**
 	 * Run the migrations.
 	 *
@@ -24,8 +26,12 @@ class Analytics extends Migration
 		 */
 		Schema::create('cry_google_analytics_ip', function (Blueprint $table)
 		{
-			$table->increments('google_analytics_ip_id');
-			$table->string('ip', 255)->unique();
+			$table->increments('id');
+			$table->dateTime('updated_at')->default(self::DATE_TIME);
+			$table->dateTime('created_at')->default(self::DATE_TIME);
+
+			$table->string('address', 255)->unique();
+			$table->integer('type');
 		});
 	}
 
@@ -36,6 +42,6 @@ class Analytics extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('cry_google_analytics_ip');
+		if (Schema::hasTable('cry_google_analytics_ip')) Schema::drop('cry_google_analytics_ip');
 	}
 }

@@ -59,8 +59,8 @@ class Init extends Migration
      */
     public function down()
     {
-        Schema::drop('cry_email_blocklist');
-        Schema::drop('cry_heartbeat');
-        Schema::drop('cry_heartbeat_code');
+		if (Schema::hasTable('cry_email_blocklist')) Schema::drop('cry_email_blocklist');
+		if (Schema::hasTable('cry_heartbeat')) Schema::drop('cry_heartbeat');
+		if (Schema::hasTable('cry_heartbeat_code')) Schema::drop('cry_heartbeat_code');
     }
 }
