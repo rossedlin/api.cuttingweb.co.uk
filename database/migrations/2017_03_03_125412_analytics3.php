@@ -12,6 +12,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class Analytics3 extends Migration
 {
+	const DATE_TIME = '1970-01-01 00:00:00';
+
 	/**
 	 * Run the migrations.
 	 *
@@ -21,8 +23,8 @@ class Analytics3 extends Migration
 	{
 		Schema::table('cry_google_analytics_ip', function (Blueprint $table)
 		{
-			$table->dateTime('updated_at');
-			$table->dateTime('created_at');
+			$table->dateTime('updated_at')->default(self::DATE_TIME);
+			$table->dateTime('created_at')->default(self::DATE_TIME);
 		});
 	}
 
