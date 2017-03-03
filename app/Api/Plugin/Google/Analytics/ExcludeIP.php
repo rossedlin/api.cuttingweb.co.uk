@@ -97,7 +97,7 @@ class ExcludeIP extends _Plugin
 		/**
 		 * Get the IP from the Request
 		 */
-		$ip = $request->get('ip', Core\Request::server(Core\Consts::REMOTE_ADDR));
+		$ip = $request->get('ip', Core\Request::server('REMOTE_ADDR'));
 
 		/**
 		 * Validate the IP
